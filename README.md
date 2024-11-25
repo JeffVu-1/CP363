@@ -128,4 +128,4 @@ This repository contains my assignments for CP363, which focuses on MySQL databa
 </details>
 
 ## <span style="color:#f3c00c;">Disclaimer</span>  
-This repository contains my personal work for CP363. Feel free to use it as a resource for learning and understanding MySQL. However, please do not submit this work as your own in any academic setting. I am not responsible for any misuse of this content.
+This repository contains my personal work for **CP363**. Feel free to use it as a resource for learning and understanding MySQL. However, please do not submit this work as your own in any academic setting. I am not responsible for any misuse of this content.
