@@ -1,0 +1,16 @@
+SELECT 
+    memberSurname, 
+    memberForename, 
+    broadDesc
+FROM 
+    member
+LEFT JOIN 
+    pub ON memberId = pubMemberId
+JOIN 
+    memberBroad ON memberId = memberBroadMemberId
+JOIN 
+    broad ON memberBroadBroadId = broadId
+WHERE 
+    pubMemberId IS NULL
+ORDER BY 
+    memberSurname, broadDesc

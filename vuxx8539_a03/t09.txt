@@ -1,0 +1,13 @@
+SELECT 
+    memberSurname, 
+    memberForename, 
+    narrowCount
+FROM 
+    member
+JOIN 
+    (SELECT memberNarrowMemberId, COUNT(*) AS narrowCount 
+     FROM memberNarrow 
+     GROUP BY memberNarrowMemberId 
+     HAVING COUNT(*) >= 30) AS narrow_counts ON memberId = memberNarrowMemberId
+ORDER BY 
+    memberSurname, memberForename

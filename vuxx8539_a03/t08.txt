@@ -1,0 +1,13 @@
+SELECT 
+    memberSurname, 
+    memberForename, 
+    broadCount
+FROM 
+    member
+JOIN 
+    (SELECT memberBroadMemberId, COUNT(*) AS broadCount 
+     FROM memberBroad 
+     GROUP BY memberBroadMemberId 
+     HAVING COUNT(*) >= 8) AS broad_counts ON memberId = memberBroadMemberId
+ORDER BY 
+    memberSurname, memberForename

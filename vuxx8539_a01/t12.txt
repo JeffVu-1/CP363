@@ -1,0 +1,3 @@
+SELECT narrowDesc FROM vBroadNarrow 
+WHERE broadDesc LIKE 'Military History'
+ORDER BY narrowDesc

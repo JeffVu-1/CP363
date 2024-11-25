@@ -1,0 +1,13 @@
+SELECT 
+    memberSurname, 
+    memberForename, 
+    pubCount
+FROM 
+    member
+JOIN 
+    (SELECT pubMemberId, COUNT(*) AS pubCount 
+     FROM pub 
+     GROUP BY pubMemberId 
+     HAVING COUNT(*) >= 4) AS pub_counts ON memberId = pubMemberId
+ORDER BY 
+    memberSurname, memberForename

@@ -1,0 +1,11 @@
+SELECT 
+    b.broadDesc, 
+    COUNT(m.memberId) AS member_count FROM broad AS b
+LEFT JOIN 
+    memberBroad AS mb ON b.broadId = mb.memberBroadBroadId
+LEFT JOIN 
+    member AS m ON mb.memberBroadMemberId = m.memberId
+GROUP BY 
+    b.broadDesc
+ORDER BY 
+    b.broadDesc

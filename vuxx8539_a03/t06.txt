@@ -1,0 +1,8 @@
+SELECT 
+    narrowDesc
+FROM 
+    narrow
+WHERE 
+    narrowId NOT IN (SELECT memberNarrowNarrowId FROM memberNarrow)
+ORDER BY 
+    narrowDesc

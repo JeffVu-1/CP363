@@ -1,0 +1,11 @@
+SELECT 
+    pubType.pubTypeDesc AS full_publication_type, 
+    COUNT(pub.pubId) AS publication_count 
+FROM 
+    pubType
+LEFT JOIN 
+    pub ON pubType.pubType = pub.pubPubType
+GROUP BY 
+    pubType.pubType
+ORDER BY 
+    full_publication_type

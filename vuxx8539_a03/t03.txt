@@ -1,0 +1,15 @@
+SELECT 
+    memberSurname, 
+    memberForename, 
+    narrowDesc
+FROM 
+    member
+JOIN 
+    memberNarrow ON memberId = memberNarrowMemberId
+JOIN 
+    narrow ON memberNarrowNarrowId = narrowId
+WHERE 
+    narrowBroadId = (SELECT broadId FROM broad WHERE broadDesc = 'Environmental Security')
+    AND memberId NOT IN (SELECT memberBroadMemberId FROM memberBroad WHERE memberBroadBroadId = (SELECT broadId FROM broad WHERE broadDesc = 'Environmental Security'))
+ORDER BY 
+    memberSurname, memberForename

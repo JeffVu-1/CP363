@@ -1,0 +1,12 @@
+SELECT 
+    member.memberSurname, 
+    member.memberForename, 
+    COUNT(DISTINCT memberBroad.memberBroadBroadId) AS broad_expertise_count 
+FROM 
+    member
+LEFT JOIN 
+    memberBroad ON member.memberId = memberBroad.memberBroadMemberId
+GROUP BY 
+    member.memberId
+ORDER BY 
+    member.memberSurname, member.memberForename

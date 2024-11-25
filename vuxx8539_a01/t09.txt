@@ -1,0 +1,3 @@
+SELECT memberSurname, memberForename FROM vMemberBroad 
+WHERE broadDesc LIKE "Military History"
+ORDER BY memberSurname, memberForename

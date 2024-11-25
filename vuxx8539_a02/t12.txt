@@ -1,0 +1,15 @@
+SELECT 
+    m.memberSurname, 
+    m.memberForename, 
+    n.narrowDesc AS narrow_expertise_description, 
+    b.broadDesc AS broad_expertise_description
+FROM 
+    member AS m
+JOIN 
+    memberNarrow AS mn ON m.memberId = mn.memberNarrowMemberId
+JOIN 
+    narrow AS n ON mn.memberNarrowNarrowId = n.narrowId
+JOIN 
+    broad AS b ON n.narrowBroadId = b.broadId
+ORDER BY 
+    m.memberSurname, m.memberForename, narrow_expertise_description

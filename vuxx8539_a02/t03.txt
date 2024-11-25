@@ -1,0 +1,12 @@
+SELECT 
+    member.memberSurname, 
+    member.memberForename, 
+    pub.pubTitle AS publication_title 
+FROM 
+    member
+JOIN 
+    pub ON member.memberId = pub.pubMemberId
+WHERE 
+    pub.pubTitle LIKE '%Nuclear%' AND pub.pubPubType = 'p'
+ORDER BY 
+    pub.pubTitle;

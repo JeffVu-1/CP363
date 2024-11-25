@@ -1,0 +1,11 @@
+SELECT 
+    n.narrowDesc AS narrow_expertise_description, 
+    COUNT(mn.memberNarrowMemberId) AS member_count 
+FROM 
+    narrow AS n
+LEFT JOIN 
+    memberNarrow AS mn ON n.narrowId = mn.memberNarrowNarrowId
+GROUP BY 
+    n.narrowId, n.narrowDesc
+ORDER BY 
+    n.narrowDesc

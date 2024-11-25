@@ -1,0 +1,13 @@
+SELECT 
+    pub.pubTitle AS publication_title, 
+    pubType.pubTypeDesc AS full_publication_type 
+FROM 
+    member
+JOIN 
+    pub ON member.memberId = pub.pubMemberId
+JOIN 
+    pubType ON pub.pubPubType = pubType.pubType
+WHERE 
+    member.memberForename = 'William' AND member.memberSurname = 'Bain'
+ORDER BY 
+    pub.pubTitle

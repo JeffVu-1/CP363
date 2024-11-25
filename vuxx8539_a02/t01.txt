@@ -1,0 +1,13 @@
+SELECT 
+    member.memberSurname, 
+    member.memberForename, 
+    pubType.pubTypeDesc AS full_publication_type, 
+    pub.pubTitle AS publication_title 
+FROM 
+    member
+JOIN 
+    pub ON member.memberId = pub.pubMemberId
+JOIN 
+    pubType ON pub.pubPubType = pubType.pubType
+ORDER BY 
+    member.memberSurname, member.memberForename, full_publication_type, publication_title
